@@ -1,5 +1,4 @@
 import zipfile 
-
 def crack(zfile,passw):
     try:
         zfile.extractall(pwd=bytes(passw, 'utf-8'))
@@ -7,7 +6,9 @@ def crack(zfile,passw):
     except:
         return("0")
 
-zfile=zipfile.ZipFile('Test.zip')
+print("Hello!!!!\n Welcome to ZipFile Cracker. Please Enter the file name.")
+filename=input()
+zfile=zipfile.ZipFile(filename)
 pfile=open('Passwords.txt')
 for i in pfile.readlines():
     passw=i.strip('\n')
@@ -18,5 +19,4 @@ for i in pfile.readlines():
         print(zfile.printdir())
         break
   
-zfile.close()    
-    
+zfile.close()   
